@@ -1,0 +1,6 @@
+[build]
+  publish = "private"
+  functions = "functions"
+
+[dev]
+  autoLaunch = false
