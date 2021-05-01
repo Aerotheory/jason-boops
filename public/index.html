@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serverless Functions — Learn With Jason</title>
+    <title>Serverless Functions — Learn With Boops</title>
 
     <style>
       *,
       *::after,
       *::before {
         box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-          Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-          'Segoe UI Symbol';
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
         line-height: 1.45;
         margin: 0;
         padding: 0;
@@ -101,9 +101,9 @@
 
     <script type="module">
       /* use Preact so we don’t need to set up bundlers */
-      import { h, render } from 'https://unpkg.com/preact@latest?module';
-      import { useState } from 'https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module';
-      import htm from 'https://unpkg.com/htm?module';
+      import { h, render } from "https://unpkg.com/preact@latest?module";
+      import { useState } from "https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module";
+      import htm from "https://unpkg.com/htm?module";
 
       const html = htm.bind(h);
 
@@ -116,8 +116,8 @@
 
           setBooping(true);
 
-          fetch('/.netlify/functions/add-boop', {
-            method: 'POST',
+          fetch("/.netlify/functions/add-boop", {
+            method: "POST",
             body: JSON.stringify({ id: corgi.id }),
           })
             .then((res) => res.json())
@@ -128,7 +128,7 @@
         };
 
         const buttonText = booping
-          ? 'plz hold, booping...'
+          ? "plz hold, booping..."
           : `Booped ${boops} Times`;
 
         return html`
@@ -155,12 +155,12 @@
 
       async function loadCorgis() {
         const corgis = await fetch(
-          '/.netlify/functions/load-corgis'
+          "/.netlify/functions/load-corgis"
         ).then((res) => res.json());
 
         render(
           html` ${corgis.map((corgi) => html` <${Corgi} corgi=${corgi} /> `)}`,
-          document.querySelector('.corgis')
+          document.querySelector(".corgis")
         );
       }
 
