@@ -1,13 +1,13 @@
-const fetch = require('node-fetch');
-const { hasuraRequest } = require('./util/hasura');
+const fetch = require("node-fetch");
+const { hasuraRequest } = require("./util/hasura");
 
 exports.handler = async () => {
   const corgis = await fetch(
-    'https://no-cors-api.netlify.app/api/corgis/'
+    "https://no-cors-api.netlify.app/api/corgis/"
   ).then((res) => res.json());
 
   const unsplashPromise = fetch(
-    'https://api.unsplash.com/collections/48405776/photos',
+    "https://api.unsplash.com/collections/O-YsQgz4t54/corgis",
     {
       headers: {
         Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
@@ -52,7 +52,7 @@ exports.handler = async () => {
   return {
     statusCode: 200,
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(completeData),
   };
