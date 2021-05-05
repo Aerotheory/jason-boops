@@ -7,7 +7,7 @@ exports.handler = async () => {
   ).then((res) => res.json());
 
   const unsplashPromise = fetch(
-    "https://api.unsplash.com/collections/48405776/photos",
+    "https://api.unsplash.com/collections/O-YsQgz4t54/corgis",
     {
       headers: {
         Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
